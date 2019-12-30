@@ -25,7 +25,7 @@ public class WebSocketServer {
 		this.send("新用户加入");
         for (int i = 0; i < 10; i++) {
             Thread.sleep(1000);
-            this.send("服务端推送：" + i);
+			this.send("服务端推送缴费通知：" + i);
         }
 	}
 	@OnClose
