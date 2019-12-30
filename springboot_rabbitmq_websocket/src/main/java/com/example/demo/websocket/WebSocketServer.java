@@ -23,10 +23,10 @@ public class WebSocketServer {
 		this.session = session;
 		webSockets.add(this);
 		this.send("新用户加入");
-//		for(int i=0;i<100;i++) {
-//			Thread.sleep(1000);
-//			this.send("服务端推送："+i);
-//		} 
+        for (int i = 0; i < 10; i++) {
+            Thread.sleep(1000);
+            this.send("服务端推送：" + i);
+        }
 	}
 	@OnClose
 	public void onClose(Session s) {
