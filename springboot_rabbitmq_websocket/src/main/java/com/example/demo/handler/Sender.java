@@ -5,17 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Calendar;
-import java.util.UUID;
 
 @Component
 public class Sender {
 
-	@Autowired
-	private RabbitTemplate amqpTemplate;
+    @Autowired
+    private RabbitTemplate amqpTemplate;
 
-	public void send() {
-		String msg = "hello" + Calendar.getInstance().getTimeInMillis();
-		System.out.println("send: " + msg);
-		this.amqpTemplate.convertAndSend("hello" + UUID.randomUUID(), msg);
-	}
+    public void send() {
+        String msg = "hello-" + Calendar.getInstance().getTimeInMillis();
+        System.out.println("send: " + msg);
+        this.amqpTemplate.convertAndSend("hello", msg);
+    }
 }

@@ -7,15 +7,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class DirectSender2 {
 
-	@Autowired
-	private RabbitTemplate rabbitTemplate;
-	
-	public void sendDirect() {
-		for(int i=0;i<100;i++) {
-			String msg = "direct msg22 "+i;
-			System.out.println("Sender2发送的消息： "+msg);
-			rabbitTemplate.convertAndSend("directExchange2", "rabbit.msg", msg);
-		}
-	}
-	
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+    public void sendDirect() {
+        for (int i = 1; i < 3; i++) {
+            String msg = "Sender-2发送的缴费通通知" + i * 100 + "元";
+            System.out.println(msg);
+            rabbitTemplate.convertAndSend("directExchange2", "rabbit.msg", msg);
+        }
+    }
+
 }

@@ -4,7 +4,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-@Component
+/*@Component
 @RabbitListener(queues="fanoutQueue3")
 public class FanoutReciver3 {
 
@@ -12,4 +12,4 @@ public class FanoutReciver3 {
 	public void read(String user) {
 		System.out.println("fanoutQueue3: "+user);
 	}
-}
+}*/
