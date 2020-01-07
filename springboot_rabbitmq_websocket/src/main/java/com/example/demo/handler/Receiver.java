@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 @RabbitListener(queues="hello")
 public class Receiver {
 
-	/*@RabbitHandler
+    @RabbitHandler
 	public void process(String msg) {
 		System.out.println("receive: "+msg);
-	}*/
+    }
 }

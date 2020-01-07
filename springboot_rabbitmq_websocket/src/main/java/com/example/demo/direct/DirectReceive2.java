@@ -11,6 +11,7 @@ public class DirectReceive2 {
 
     @RabbitHandler
     public void process(String msg) throws InterruptedException {
+        int i = 1 / 0;
         System.out.println("Receive2接受的消息： " + msg);
         Thread.sleep(500);
         //同websocket推送到页面
