@@ -12,7 +12,7 @@ public class DirectSender2 {
 
     public void sendDirect() {
         for (int i = 1; i < 3; i++) {
-            String msg = "Sender-2发送的缴费通通知" + i * 100 + "元";
+            String msg = "DirectSender-2发送的缴费通通知" + i * 100 + "元";
             System.out.println(msg);
             rabbitTemplate.convertAndSend("directExchange2", "rabbit.msg", msg);
         }
